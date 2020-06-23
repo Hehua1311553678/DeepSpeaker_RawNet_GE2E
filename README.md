@@ -1,6 +1,13 @@
 # DeepSpeaker_RawNet_GE2E
 分别在VCTK、AISHELL1 和 VoxCeleb1 三个标准公开数据集上对三种端到端声纹模型框架（Deep Speaker, RawNet, GE2E）进行实验比较。
 
+## 过程记录
+[Deep Speaker代码解析](https://blog.csdn.net/weixin_40680322/article/details/104620713)
+
+[RawNet代码解析](https://blog.csdn.net/weixin_40680322/article/details/104755909)
+
+[ge2e代码解析](https://blog.csdn.net/weixin_40680322/article/details/104930765)
+
 ## 声纹确认demo
 SpeakerRecognition_demo使用的是RawNet在VCTK数据集上训练得到的模型，声纹确认demo录屏.mp4为相应的录屏。
 
