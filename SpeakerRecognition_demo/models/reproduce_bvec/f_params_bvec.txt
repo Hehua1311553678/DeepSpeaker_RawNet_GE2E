@@ -1,0 +1,26 @@
+batch_size:	120
+base_dir:	/DB
+optimizer:	Adam
+opt_decay:	0.0001
+amsgrad:	1
+lr:	0.001
+dev_scp:	scp/train/train_wav_pe.scp
+eval_scp:	scp/test/test_wav_pe.scp
+val_scp:	scp/dev/dev_wav_pe.scp
+epoch:	10
+save_dir:	exp/model/networks/
+name:	reproduce_bvec
+nb_batch_per_epoch:	1000
+trials:	trials.txt
+val_trials:	val_trials.txt
+gru_embeddings:	exp/data/speaker_embeddings_RawNet
+save_best_only:	0
+model:	{'nb_dense_node': [1024, 1024, 1024, 1024], 'initializer': 'RandomUniform', 'wd': 5e-05, 'dim_embedding': 128, 'drop_ratio': 0.5, 'nb_spk': 94}
+DNN model params
+nb_dense_node:	[1024, 1024, 1024, 1024]
+initializer:	RandomUniform
+wd:	5e-05
+dim_embedding:	128
+drop_ratio:	0.5
+nb_spk:	94
+model_name: ua\RawNet\vctk_mini\model_bvec

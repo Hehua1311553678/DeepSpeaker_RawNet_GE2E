@@ -1,0 +1,33 @@
+batch_size:	102
+nb_samp:	59049
+base_dir:	/home/typ/hehua/Codes/RawNet
+optimizer:	Adam
+opt_decay:	0.0001
+amsgrad:	1
+lr:	0.001
+dev_scp:	scp/train/train_wav_pe.scp
+eval_scp:	scp/test/test_wav_pe.scp
+val_scp:	scp/dev/dev_wav_pe.scp
+epoch:	10
+save_dir:	exp/model/networks/
+name:	reproduce_RawNet
+mg:	0
+nb_gpu:	1
+c_lambda:	0.001
+trials:	trials.txt
+val_trials:	val_trials.txt
+save_best_only:	0
+gru_embeddings:	exp/data/
+model:	{'nb_s_conv_filt': 128, 'initializer': 'he_normal', 'wd': 0.0001, 'nb_conv_filt': [[128, 128], [256, 256], [256, 256], 256], 'nb_dense_node': [128], 'c_alpha': 0.5, 'nb_gru_node': [1024], 'req_drop': 0.3, 'nb_spk': 94, 'batch_size': 102}
+DNN model params
+nb_s_conv_filt:	128
+initializer:	he_normal
+wd:	0.0001
+nb_conv_filt:	[[128, 128], [256, 256], [256, 256], 256]
+nb_dense_node:	[128]
+c_alpha:	0.5
+nb_gru_node:	[1024]
+req_drop:	0.3
+nb_spk:	94
+batch_size:	102
+model_name: model_RawNet_pre_train.py

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>声纹确认demo</title>
+</head>
+<body>
+    <div class="jumbotron" align="center">
+      <h1>声纹确认demo</h1>
+        <p>模型：RawNet&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp数据集：VCTK</p>
+    </div>
+    <div style="border:1px solid #CCC"></div>
+    <form enctype="multipart/form-data" action="/speaker-verification" method="post">
+        {% csrf_token %}
+        <p align="center">
+            第一条音频：<input type="file" name="wav_file1">
+            第二条音频：<input type="file" name="wav_file2">
+            <button type="submit" name="upload">上传</button>
+        </p>
+        <p align="center">{{ success }}</p>
+        <p align="center">
+            <button type="submit" name="reset">重置</button>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <button type="submit" name="test">测试</button>
+        </p>
+    </form>
+    <p align="center">{{ rlt }}</p>
+</body>
+</html>

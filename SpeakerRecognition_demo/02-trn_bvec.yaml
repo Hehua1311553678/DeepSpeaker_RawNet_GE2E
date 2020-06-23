@@ -1,0 +1,47 @@
+batch_size: 120
+base_dir: /DB
+optimizer: Adam
+opt_decay: 0.0001
+amsgrad: 1
+lr: 0.001
+
+#dev_scp: /DB/VoxCeleb1/feature/waveform/dev_wav_pe.scp
+#dev_scp: /hehua/DB/VoxCeleb1/feature/waveform/dev_wav_pe.scp
+dev_scp: scp/train/train_wav_pe_spk90_UttPerSpk5.scp
+#==============================================================2020/05/20 22:13
+#eval_scp: /DB/VoxCeleb1/feature/waveform/eval_wav_pe.scp
+#eval_scp: /hehua/DB/VoxCeleb1/feature/waveform/eval_wav_pe.scp
+eval_scp: scp/test/test_wav_pe_spk90_UttPerSpk5.scp
+#==============================================================2020/05/20 22:13
+val_scp: scp/dev/dev_wav_pe_spk90_UttPerSpk5.scp
+#==============================================================2020/05/20 22:13
+#epoch: 1000
+epoch: 10
+save_dir: exp/model_spk90_UttPerSpk5/networks/
+#==============================================================2020/05/20 22:13
+#save_dir: /hehua/exp/model/networks/
+name: reproduce_bvec
+nb_batch_per_epoch: 1000
+#trials: /DB/VoxCeleb1/voxceleb1_test.txt
+#trials: /hehua/DB/VoxCeleb1/voxceleb1_test.txt
+trials: trials_spk90_UttPerSpk5.txt
+#==============================================================2020/05/20 22:13
+#val_trials: /DB/VoxCeleb1/voxceleb1_val.txt
+#val_trials: /hehua/DB/VoxCeleb1/voxceleb1_val.txt
+val_trials: val_trials_spk90_UttPerSpk5.txt
+#==============================================================2020/05/20 22:13
+
+#gru_embeddings: /exp/data/speaker_embeddings_RawNet
+#gru_embeddings: /hehua/exp/data/speaker_embeddings_RawNet
+gru_embeddings: exp/data_spk90_UttPerSpk5/speaker_embeddings_RawNet
+#==============================================================2020/05/20 22:13
+#save_best_only: 1
+save_best_only: 0
+
+model:
+  #nb_dense_node: [512, 512, 512, 512] 
+  nb_dense_node: [1024, 1024, 1024, 1024] 
+  initializer: RandomUniform
+  wd: 0.00005
+  dim_embedding: 128
+  drop_ratio: 0.5
