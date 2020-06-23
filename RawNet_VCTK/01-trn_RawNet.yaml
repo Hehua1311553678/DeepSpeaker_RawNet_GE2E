@@ -1,0 +1,62 @@
+#batch_size: 102
+batch_size: 32
+# =========================================================================2020/05/22 18:28
+nb_samp: 59049 #number of sample in trainset batch configuration
+#base_dir: /DB
+#base_dir: /hehua/DB
+#base_dir: /Codes/Python/graduatedesign/RawNet/RawNet-master/keras
+base_dir: /home/typ/hehua/Codes/RawNet
+
+#optimizer
+optimizer: Adam
+opt_decay: 0.0001
+amsgrad: 1
+
+lr: 0.001
+#dev_scp: /DB/VoxCeleb1/feature/waveform/dev_wav_pe.scp
+#dev_scp: /hehua/DB/Aishell1/scp/train/train_wav_pe.scp
+#dev_scp: /Codes/Python/graduatedesign/RawNet/RawNet-master/keras/aishell1/scp/train/train_wav_pe.scp
+dev_scp: scp/train/train_wav_pe_spk90_UttPerSpk5.scp
+#==============================================================2020/05/20 22:13
+#eval_scp: /DB/VoxCeleb1/feature/waveform/eval_wav_pe.scp
+#eval_scp: /hehua/DB/Aishell1/scp/test/test_wav_pe.scp
+#val_scp: /hehua/DB/Aishell1/scp/dev/dev_wav_pe.scp
+#eval_scp: /Codes/Python/graduatedesign/RawNet/RawNet-master/keras/aishell1/scp/test/test_wav_pe.scp
+eval_scp: scp/test/test_wav_pe_spk90_UttPerSpk5.scp
+#==============================================================2020/05/20 22:13
+#val_scp: /Codes/Python/graduatedesign/RawNetet/RawNet-master/keras/aishell1/scp/dev/dev_wav_pe.scp
+val_scp: scp/dev/dev_wav_pe_spk90_UttPerSpk5.scp
+#==============================================================2020/05/20 22:13
+#epoch: 100
+epoch: 10
+#save_dir: /exp/model/networks/
+#save_dir: /Codes/Python/graduatedesign/RawNet/RawNet-master/keras/aishell1/exp/model/networks/
+save_dir: exp/model_spk90_UttPerSpk5/networks/
+#==============================================================2020/05/20 22:13
+name: reproduce_RawNet
+#mg: 1 #flag for multi-GPU training
+mg: 0 #flag for multi-GPU training
+#nb_gpu: 2 #number of GPUs
+nb_gpu: 1 #number of GPUs
+c_lambda: 0.001
+#trials: /DB/VoxCeleb1/voxceleb1_test.txt
+trials: trials_spk90_UttPerSpk5.txt
+#==============================================================2020/05/20 22:13
+#val_trials: /DB/VoxCeleb1/voxceleb1_val.txt
+val_trials: val_trials_spk90_UttPerSpk5.txt
+#==============================================================2020/05/20 22:13
+save_best_only: 0
+
+gru_embeddings: exp/data_spk90_UttPerSpk5/
+#==============================================================2020/05/20 22:13
+model:
+  nb_s_conv_filt: 128
+  initializer: he_normal
+  wd: 0.0001
+  nb_conv_filt: [[128, 128], [256, 256], [256, 256], 256]
+  nb_dense_node: [128]
+  c_alpha: 0.5
+  nb_gru_node: [1024]
+  req_drop: 0.3
+  
+
